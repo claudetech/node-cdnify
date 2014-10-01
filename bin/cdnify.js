@@ -20,7 +20,6 @@ var minimistOptions = {
 };
 
 var argv = minimist(process.argv.slice(2), minimistOptions);
-console.log(argv);
 _.each(argv._, function (file) {
   cdnify.processFile(file, argv, function (err, html) {
     if (err) {
