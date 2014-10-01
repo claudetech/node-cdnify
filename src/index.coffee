@@ -25,4 +25,8 @@ exports.process = (rawHtml, options, callback) ->
 exports.processFile = (filepath, options, callback) ->
   fs.readFile filepath, 'utf8', (err, rawHtml) ->
     return callback(err) if err
-    exports.process rawHtml, options, callback
+    exports.process rawHtml, options, (err, html, $) ->
+      return callback(err) if err
+      return callback(err, html, $) unless options.output
+      fs.writeFile options.output, html, (err) ->
+        callback err, html, $
