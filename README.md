@@ -66,7 +66,7 @@ $ cdnify -o foo.html --use-local -i glob -i other-attr --cdn-attr custom-attr
 
 ## Public API
 
-This module exposes two methods:
+This module exposes two functions:
 
 * `cdnify.process(rawHtml, options, callback)`
   Arguments:

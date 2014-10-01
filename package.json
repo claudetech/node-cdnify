@@ -1,6 +1,6 @@
 {
   "name": "cdnify",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "CLI tool and library to use CDN in production",
   "main": "lib/index.js",
   "bin": {
