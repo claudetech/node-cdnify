@@ -9,7 +9,7 @@ exports.process = (rawHtml, options, callback) ->
   _.defaults options, defaults
   options.incompatible = [options.incompatible] if _.isString(options.incompatible)
   selector = "[#{options.cdnAttr}]"
-  $ = cheerio.load rawHtml
+  $ = cheerio.load rawHtml, {decodeEntities: false}
   err = null
   $(selector).each ->
     $this = $(this)
